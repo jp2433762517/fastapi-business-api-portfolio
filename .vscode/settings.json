@@ -1,0 +1,72 @@
+{
+  // ===== Editor =====
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  // ===== Files =====
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/__pycache__": true,
+    "**/.ruff_cache": true,
+    "**/.coverage": true,
+    "**/.pytest_cache": true,
+    "**/.poetry": true,
+    "**/.python_packages": true
+  },
+  // ===== GitHub Copilot =====
+  "github.copilot.enable": {
+    "*": true
+  },
+  // ===== Python / Pylance =====
+  "python.languageServer": "Pylance",
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.includeAliasesFromUserFiles": true,
+  // 大型项目索引深度（FastAPI + Core）
+  "python.analysis.packageIndexDepths": [
+    {
+      "name": "fastapi",
+      "depth": 2
+    },
+    {
+      "name": "backend_core",
+      "depth": 2
+    }
+  ],
+  // 使用项目本地 venv（Poetry / venv）
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  // ===== Testing =====
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.testing.pytestArgs": [
+    "-vv"
+  ],
+  // ===== Ruff =====
+  "ruff.importStrategy": "fromEnvironment",
+  // ===== Language specific =====
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit",
+      "source.fixAll.ruff": "explicit"
+    }
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  }
+}
