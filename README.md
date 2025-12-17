@@ -1,4 +1,4 @@
-# Corporate Mobility Management API（Portfolio）
+# FastAPI + Clean Architecture Portfolio Demo
 
 ## 概要
 本プロジェクトは、法人および個人ユーザ向けに  
@@ -43,7 +43,20 @@
 - 共通フロー（Command パターン想定）
 
 ---
+## 実行方法
 
+1. コードをクローン
+2. `poetry install`
+3. `uvicorn app.presentation.rest.app:app --reload`
+
+## Layer Rules
+
+- Domain layer must not depend on any framework or infrastructure
+- Application layer coordinates use cases and transactions
+- Infrastructure layer implements domain interfaces
+- Presentation layer handles HTTP concerns only
+
+Direct access from presentation to infrastructure is prohibited.
 ## アーキテクチャ
 本プロジェクトでは、実務で経験した  
 Clean Architecture / DDD の考え方を参考にし、
